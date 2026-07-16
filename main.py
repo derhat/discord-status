@@ -22,7 +22,10 @@ STATUSES = [
     {"text": "Money can buy many things. Even power.", "emoji_name": "7_star", "emoji_id": "1424510375390478407"},
     {"text": "𝘓𝘦𝘨𝘦𝘯𝘥", "emoji_name": "7_crown", "emoji_id": "1432835236932358298"},
     {"text": "Victory smiles upon those who take bold risks; only those with courage to act can hope to change the world.", "emoji_name": "satanic~1", "emoji_id": "1423198805788200981"},
-    {"text": "LIVE_CLOCK", "emoji_name": "loading_icon", "emoji_id": "1289683858337562625"}
+    {"text": "LIVE_CLOCK", "emoji_name": "loading_icon", "emoji_id": "1289683858337562625"},
+    {"text": "/HvH", "emoji_name": "custom", "emoji_id": "1158064269267574824"},
+    {"text": "Ideas have the power to outlive us; while men may pass, their thoughts and beliefs will endure for generations.", "emoji_name": "custom", "emoji_id": "896093827666948198"},
+    {"text": "Milliers d'euros, plus de peine de cœur. Cœur à zéro, j't'oublie sans rancœur", "emoji_name": "custom", "emoji_id": "1424513479813107762"}
 ]
 
 # ══════════════════════════════════════════
@@ -49,6 +52,9 @@ class StatusBot(discord.Client):
         asyncio.create_task(self.rotate_status())
 
     async def set_streaming_and_status(self, text, emoji_name, emoji_id):
+        import time
+        now_ms = int(time.time() * 1000)
+        
         activities = [
             {
                 "type": 4,
@@ -58,11 +64,28 @@ class StatusBot(discord.Client):
             },
             {
                 "type": 1,
-                "name": "VEX",
+                "name": "Streaming",
                 "url": "https://www.twitch.tv/discord",
                 "application_id": "1526689014810148875",
-                "buttons": ["Watch"],
+                "assets": {
+                    "large_image": "https://cdn.discordapp.com/emojis/889120351223709726.gif"
+                },
+                "buttons": ["/nosuce"],
                 "metadata": {"button_urls": [WATCH_LINK]}
+            },
+            {
+                "type": 2,
+                "name": "Spotify",
+                "application_id": "210906706013650944",
+                "assets": {
+                    "large_image": "https://cdn.discordapp.com/emojis/1418648754545758248.gif"
+                },
+                "timestamps": {
+                    "start": now_ms - (404 * 3600 * 1000),
+                    "end": now_ms
+                },
+                "buttons": ["Listen Along", "Play on Spotify"],
+                "metadata": {"button_urls": ["https://open.spotify.com/", "https://open.spotify.com/"]}
             }
         ]
         try:
@@ -75,7 +98,7 @@ class StatusBot(discord.Client):
                     "activities": activities
                 }
             })
-            print(f"[+] Status updated: {text}", flush=True)
+            print(f"[+] Status updated: {text[:20]}...", flush=True)
         except Exception as e:
             print(f"[!] Error: {e}", flush=True)
 
