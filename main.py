@@ -68,7 +68,7 @@ class StatusBot(discord.Client):
                 "url": "https://www.twitch.tv/discord",
                 "application_id": "1526689014810148875",
                 "assets": {
-                    "large_image": "https://cdn.discordapp.com/emojis/889120351223709726.gif"
+                    "large_image": "mp:emojis/889120351223709726.gif"
                 },
                 "buttons": ["/nosuce"],
                 "metadata": {"button_urls": [WATCH_LINK]}
@@ -78,7 +78,7 @@ class StatusBot(discord.Client):
                 "name": "Spotify",
                 "application_id": "210906706013650944",
                 "assets": {
-                    "large_image": "https://cdn.discordapp.com/emojis/1418648754545758248.gif"
+                    "large_image": "mp:emojis/1418648754545758248.gif"
                 },
                 "timestamps": {
                     "start": now_ms - (404 * 3600 * 1000),
