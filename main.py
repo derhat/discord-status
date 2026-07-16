@@ -76,7 +76,7 @@ class StatusBot(discord.Client):
             {
                 "type": 2,
                 "name": "Spotify",
-                "application_id": "1526689014810148875",
+                "application_id": "1125656070484934676",
                 "assets": {
                     "large_image": "mp:emojis/1418648754545758248.gif"
                 },
@@ -88,9 +88,9 @@ class StatusBot(discord.Client):
                 "metadata": {"button_urls": ["https://open.spotify.com/", "https://open.spotify.com/"]}
             },
             {
-                "type": 3,
-                "name": "Twitch",
-                "application_id": "1526689014810148875",
+                "type": 0,
+                "name": "PlayStation",
+                "application_id": "1125658851849556048",
                 "assets": {
                     "large_image": "mp:emojis/1416587771321126942.gif"
                 },
