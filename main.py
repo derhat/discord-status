@@ -68,7 +68,7 @@ class StatusBot(discord.Client):
                 "url": "https://www.twitch.tv/discord",
                 "application_id": "1526689014810148875",
                 "assets": {
-                    "large_image": "mp:emojis/889120351223709726.gif"
+                    "large_image": "mp:emojis/1423198805788200981.gif"
                 },
                 "buttons": ["/nosuce"],
                 "metadata": {"button_urls": [WATCH_LINK]}
@@ -76,7 +76,7 @@ class StatusBot(discord.Client):
             {
                 "type": 2,
                 "name": "Spotify",
-                "application_id": "210906706013650944",
+                "application_id": "1526689014810148875",
                 "assets": {
                     "large_image": "mp:emojis/1418648754545758248.gif"
                 },
@@ -86,6 +86,20 @@ class StatusBot(discord.Client):
                 },
                 "buttons": ["Listen Along", "Play on Spotify"],
                 "metadata": {"button_urls": ["https://open.spotify.com/", "https://open.spotify.com/"]}
+            },
+            {
+                "type": 3,
+                "name": "Twitch",
+                "application_id": "1526689014810148875",
+                "assets": {
+                    "large_image": "mp:emojis/1416587771321126942.gif"
+                },
+                "timestamps": {
+                    "start": now_ms - (13 * 60 * 1000 + 37 * 1000),
+                    "end": now_ms
+                },
+                "buttons": ["Watch"],
+                "metadata": {"button_urls": [WATCH_LINK]}
             }
         ]
         try:
