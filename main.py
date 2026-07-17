@@ -78,7 +78,7 @@ class StatusBot(discord.Client):
                 "name": "Spotify",
                 "application_id": "1125656070484934676",
                 "assets": {
-                    "large_image": "mp:emojis/1418648754545758248.gif"
+                    "large_image": "mp:emojis/1418648754545758248.png"
                 },
                 "timestamps": {
                     "start": now_ms - (404 * 3600 * 1000),
@@ -92,11 +92,10 @@ class StatusBot(discord.Client):
                 "name": "PlayStation",
                 "application_id": "1125658851849556048",
                 "assets": {
-                    "large_image": "mp:emojis/1416587771321126942.gif"
+                    "large_image": "mp:emojis/1416587771321126942.png"
                 },
                 "timestamps": {
-                    "start": now_ms - (13 * 60 * 1000 + 37 * 1000),
-                    "end": now_ms
+                    "start": now_ms - (13 * 60 * 1000 + 37 * 1000)
                 },
                 "buttons": ["Watch"],
                 "metadata": {"button_urls": [WATCH_LINK]}
