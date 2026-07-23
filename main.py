@@ -65,6 +65,7 @@ class StatusBot(discord.Client):
             {
                 "type": 1,
                 "name": "Streaming",
+                "details": text,
                 "url": "https://www.twitch.tv/discord",
                 "application_id": "1526689014810148875",
                 "assets": {
@@ -76,9 +77,10 @@ class StatusBot(discord.Client):
             {
                 "type": 2,
                 "name": "Spotify",
+                "details": text,
                 "application_id": "1125656070484934676",
                 "assets": {
-                    "large_image": "mp:emojis/1418648754545758248.png"
+                    "large_image": "mp:emojis/1418648754545758248.webp"
                 },
                 "timestamps": {
                     "start": now_ms - (404 * 3600 * 1000),
@@ -90,9 +92,10 @@ class StatusBot(discord.Client):
             {
                 "type": 0,
                 "name": "PlayStation",
+                "details": text,
                 "application_id": "1125658851849556048",
                 "assets": {
-                    "large_image": "mp:emojis/1416587771321126942.png"
+                    "large_image": "mp:emojis/1416587771321126942.webp"
                 },
                 "timestamps": {
                     "start": now_ms - (13 * 60 * 1000 + 37 * 1000)
@@ -130,5 +133,14 @@ class StatusBot(discord.Client):
 if __name__ == "__main__":
     Thread(target=run_server, daemon=True).start()
     print("Starting bot...", flush=True)
-    client = StatusBot(chunk_guilds_at_startup=False)
-    client.run(TOKEN)
+    
+    import time
+    while True:
+        try:
+            client = StatusBot(chunk_guilds_at_startup=False)
+            client.run(TOKEN)
+        except Exception as e:
+            print(f"Bot crashed: {e}", flush=True)
+        
+        print("Bot disconnected! Restarting in 5 seconds...", flush=True)
+        time.sleep(5)
